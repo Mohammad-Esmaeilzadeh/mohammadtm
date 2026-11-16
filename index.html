@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موبایل شاپ | فروشگاه تخصصی موبایل</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #080d18;
+  --card: #111a2b;
+  --card2: #172338;
+  --blue: #168cff;
+  --cyan: #00d4ff;
+  --white: #f5f8ff;
+  --gray: #94a3b8;
+  --border: #24334b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.8;
+}
+
+button, input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+
+header {
+  background: #0c1423;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--cyan);
+}
+
+.logo span {
+  color: white;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--gray);
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--cyan);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-btn {
+  background: var(--blue);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.cart-count {
+  background: white;
+  color: #0875db;
+  border-radius: 20px;
+  padding: 1px 7px;
+  margin-right: 4px;
+}
+
+/* HERO */
+
+.hero {
+  padding: 80px 0;
+  background:
+    radial-gradient(circle at 15% 50%, #07376b 0%, transparent 40%),
+    linear-gradient(120deg, #0b1425, #101f37);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+  color: var(--cyan);
+}
+
+.hero-text p {
+  color: var(--gray);
+  margin-bottom: 25px;
+}
+
+.main-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #0875ed, #00b8e8);
+  color: white;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.hero-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0875ed, #00d4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 130px;
+  box-shadow: 0 0 80px #0875ed55;
+  flex-shrink: 0;
+}
+
+/* FEATURES */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 45px auto;
+}
+
+.feature {
+  background: var(--card);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.feature .icon {
+  font-size: 30px;
+}
+
+.feature h3 {
+  font-size: 16px;
+}
+
+.feature p {
+  color: var(--gray);
+  font-size: 13px;
+}
+
+/* PRODUCTS */
+
+.products-section {
+  padding: 40px 0 80px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 30px;
+}
+
+.section-title p {
+  color: var(--gray);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 220px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  color: white;
+  outline: none;
+}
+
+.search-box:focus {
+  border-color: var(--blue);
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--card2);
+  color: var(--gray);
+  padding: 10px 17px;
+  border-radius: 9px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--blue);
+  color: white;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: .3s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--blue);
+  box-shadow: 0 10px 30px #0875ed20;
+}
+
+.product-image {
+  height: 210px;
+  background: #172338;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.product-image img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: .3s;
+}
+
+.product-card:hover img {
+  transform: scale(1.06);
+}
+
+.product-info {
+  padding: 17px;
+}
+
+.brand {
+  color: var(--cyan);
+  font-size: 12px;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.description {
+  color: var(--gray);
+  font-size: 12px;
+}
+
+.price {
+  color: #35b6ff;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 12px 0;
+}
+
+.add-btn {
+  width: 100%;
+  background: var(--blue);
+  color: white;
+  padding: 11px;
+  border-radius: 9px;
+  transition: .3s;
+}
+
+.add-btn:hover {
+  background: #0064c9;
+}
+
+.discount {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ef4444;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  z-index: 2;
+}
+
+.empty {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 50px;
+  color: var(--gray);
+}
+
+/* PROMO */
+
+.promo {
+  background: linear-gradient(100deg, #0755a9, #09294c);
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.promo h2 {
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+.promo p {
+  color: #d4eaff;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0c1423;
+  border-top: 1px solid var(--border);
+  padding: 45px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 35px;
+}
+
+footer h3 {
+  margin-bottom: 12px;
+  color: var(--cyan);
+}
+
+footer p, footer a {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+footer a {
+  display: block;
+  margin: 7px 0;
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  margin-top: 30px;
+  color: var(--gray);
+  font-size: 12px;
+}
+
+/* CART MODAL */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000b;
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.overlay.show {
+  display: flex;
+}
+
+.cart-modal {
+  background: #111a2b;
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 520px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 25px;
+  border-radius: 18px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  background: #25344a;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+
+.cart-item h4 {
+  font-size: 14px;
+}
+
+.cart-item small {
+  color: var(--cyan);
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity button {
+  background: var(--blue);
+  color: white;
+  width: 27px;
+  height: 27px;
+  border-radius: 6px;
+}
+
+.remove-btn {
+  background: #dc3545;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 22px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #00a878;
+  color: white;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #0875ed;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  z-index: 300;
+  transition: .3s;
+  white-space: nowrap;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+@media(max-width:900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-image {
+    width: 220px;
+    height: 220px;
+    font-size: 95px;
+  }
+}
+
+@media(max-width:650px) {
+  nav {
+    display: none;
+  }
+
+  .navbar {
+    min-height: 65px;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 160px;
+    height: 160px;
+    font-size: 75px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .product-image {
+    height: 155px;
+  }
+
+  .product-info {
+    padding: 10px;
+  }
+
+  .product-info h3 {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .add-btn {
+    font-size: 12px;
+    padding: 9px 4px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promo {
+    padding: 25px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="container navbar">
+
+    <a href="#" class="logo">MOBILE<span>SHOP.</span></a>
+
+    <nav>
+      <a href="#">خانه</a>
+      <a href="#products">محصولات</a>
+      <a href="#features">مزایای ما</a>
+      <a href="#contact">تماس با ما</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="cart-btn" onclick="openCart()">
+        🛒 سبد خرید
+        <span class="cart-count" id="cartCount">۰</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="hero-text">
+      <h1>
+        دنیای تکنولوژی
+        <span>در دستان تو!</span>
+      </h1>
+
+      <p>
+        جدیدترین گوشی‌های موبایل از برندهای معتبر جهان
+        با قیمت مناسب و کیفیت عالی.
+      </p>
+
+      <a href="#products" class="main-btn">
+        مشاهده محصولات ←
+      </a>
+    </div>
+
+    <div class="hero-image">
+      📱
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+
+<section class="container features" id="features">
+
+  <div class="feature">
+    <div class="icon">🚚</div>
+    <h3>ارسال سریع</h3>
+    <p>تحویل سفارش در کوتاه‌ترین زمان</p>
+  </div>
+
+  <div class="feature">
+    <div class="icon">🛡️</div>
+    <h3>ضمانت اصالت</h3>
+    <p>تضمین اصالت تمام محصولات</p>
+  </div>
+
+  <div class="feature">
+    <div class="icon">💳</div>
+    <h3>خرید آسان</h3>
+    <p>تجربه خریدی راحت و مطمئن</p>
+  </div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products-section container" id="products">
+
+  <div class="section-title">
+    <h2>محصولات فروشگاه</h2>
+    <p>جدیدترین گوشی‌های روز دنیا</p>
+  </div>
+
+  <div class="toolbar">
+
+    <input
+      type="text"
+      id="search"
+      class="search-box"
+      placeholder="🔍 جستجوی نام گوشی..."
+    >
+
+    <div class="filters">
+      <button class="filter-btn active" data-brand="all">همه</button>
+      <button class="filter-btn" data-brand="apple">اپل</button>
+      <button class="filter-btn" data-brand="samsung">سامسونگ</button>
+      <button class="filter-btn" data-brand="xiaomi">شیائومی</button>
+    </div>
+
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
+
+</section>
+
+<!-- PROMO -->
+
+<section class="container">
+  <div class="promo">
+    <h2>🔥 پیشنهاد ویژه فروشگاه</h2>
+    <p>گوشی مورد علاقه‌ات را انتخاب کن و خریدی جذاب را تجربه کن!</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>MOBILE SHOP</h3>
+        <p>
+          فروشگاه تخصصی موبایل با هدف ارائه بهترین
+          محصولات دیجیتال و تجربه خرید آسان.
+        </p>
+      </div>
+
+      <div>
+        <h3>دسترسی سریع</h3>
+        <a href="#">صفحه اصلی</a>
+        <a href="#products">محصولات</a>
+        <a href="#features">مزایای ما</a>
+      </div>
+
+      <div>
+        <h3>ارتباط با ما</h3>
+        <p>📞 ۰۹۱۲۰۰۰۰۰۰۰</p>
+        <p>📧 info@example.com</p>
+        <p>📍 آدرس فروشگاه شما</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      تمامی حقوق برای MOBILE SHOP محفوظ است.
+    </div>
+
+  </div>
+</footer>
+
+<!-- CART -->
+
+<div class="overlay" id="cartOverlay" onclick="overlayClose(event)">
+
+  <div class="cart-modal">
+
+    <div class="cart-header">
+      <h2>🛒 سبد خرید شما</h2>
+      <button class="close-btn" onclick="closeCart()">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      <span>مبلغ کل:</span>
+      <span id="cartTotal">۰ تومان</span>
+    </div>
+
+    <button class="checkout-btn" onclick="checkout()">
+      ثبت سفارش
+    </button>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+// PRODUCTS
+
+const products = [
+  {
+    id: 1,
+    name: "iPhone 16 Pro Max",
+    brand: "apple",
+    description: "256 گیگابایت | رم 8",
+    price: 125000000,
+    discount: 5,
+    image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500"
+  },
+  {
+    id: 2,
+    name: "iPhone 16",
+    brand: "apple",
+    description: "128 گیگابایت | رم 8",
+    price: 85000000,
+    discount: 0,
+    image: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500"
+  },
+  {
+    id: 3,
+    name: "Samsung S25 Ultra",
+    brand: "samsung",
+    description: "256 گیگابایت | رم 12",
+    price: 110000000,
+    discount: 8,
+    image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500"
+  },
+  {
+    id: 4,
+    name: "Samsung S24 FE",
+    brand: "samsung",
+    description: "256 گیگابایت | رم 8",
+    price: 48000000,
+    discount: 0,
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+  },
+  {
+    id: 5,
+    name: "Xiaomi 15 Ultra",
+    brand: "xiaomi",
+    description: "512 گیگابایت | رم 16",
+    price: 95000000,
+    discount: 5,
+    image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"
+  },
+  {
+    id: 6,
+    name: "Xiaomi 14T Pro",
+    brand: "xiaomi",
+    description: "256 گیگابایت | رم 12",
+    price: 42000000,
+    discount: 0,
+    image: "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=500"
+  },
+  {
+    id: 7,
+    name: "iPhone 15 Pro",
+    brand: "apple",
+    description: "256 گیگابایت | رم 8",
+    price: 79000000,
+    discount: 10,
+    image: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=500"
+  },
+  {
+    id: 8,
+    name: "Samsung A55",
+    brand: "samsung",
+    description: "256 گیگابایت | رم 8",
+    price: 29000000,
+    discount: 0,
+    image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500"
+  }
+];
+
+// CART
+
+let cart = JSON.parse(localStorage.getItem("mobileCart")) || [];
+let activeBrand = "all";
+
+const formatPrice = price =>
+  price.toLocaleString("fa-IR") + " تومان";
+
+function getPrice(product) {
+  return Math.round(
+    product.price * (100 - product.discount) / 100
+  );
+}
+
+// RENDER PRODUCTS
+
+function renderProducts() {
+
+  const grid = document.getElementById("productGrid");
+  const search = document.getElementById("search").value.trim().toLowerCase();
+
+  const filtered = products.filter(product => {
+
+    const matchesBrand =
+      activeBrand === "all" || product.brand === activeBrand;
+
+    const matchesSearch =
+      product.name.toLowerCase().includes(search);
+
+    return matchesBrand && matchesSearch;
+  });
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="empty">محصولی پیدا نشد!</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map(product => `
+
+    <div class="product-card">
+
+      ${product.discount ? `
+        <span class="discount">${product.discount}٪ تخفیف</span>
+      ` : ""}
+
+      <div class="product-image">
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="product-info">
+
+        <span class="brand">
+          ${product.brand === "apple" ? "APPLE" :
+            product.brand === "samsung" ? "SAMSUNG" : "XIAOMI"}
+        </span>
+
+        <h3>${product.name}</h3>
+
+        <p class="description">${product.description}</p>
+
+        <div class="price">
+          ${formatPrice(getPrice(product))}
+        </div>
+
+        <button class="add-btn" onclick="addToCart(${product.id})">
+          + افزودن به سبد خرید
+        </button>
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+}
+
+// FILTER
+
+document.querySelectorAll(".filter-btn").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    document.querySelectorAll(".filter-btn").forEach(btn =>
+      btn.classList.remove("active")
+    );
+
+    button.classList.add("active");
+
+    activeBrand = button.dataset.brand;
+
+    renderProducts();
+
+  });
+
+});
+
+document.getElementById("search").addEventListener(
+  "input", renderProducts
+);
+
+// ADD TO CART
+
+function addToCart(id) {
+
+  const product = products.find(p => p.id === id);
+
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({
+      id: id,
+      quantity: 1
+    });
+  }
+
+  saveCart();
+
+  showToast("محصول به سبد خرید اضافه شد ✓");
+}
+
+// SAVE CART
+
+function saveCart() {
+
+  localStorage.setItem("mobileCart", JSON.stringify(cart));
+
+  updateCartCount();
+
+  renderCart();
+
+}
+
+// CART COUNT
+
+function updateCartCount() {
+
+  const count = cart.reduce(
+    (sum, item) => sum + item.quantity, 0
+  );
+
+  document.getElementById("cartCount").textContent =
+    count.toLocaleString("fa-IR");
+
+}
+
+// RENDER CART
+
+function renderCart() {
+
+  const container = document.getElementById("cartItems");
+
+  if (!cart.length) {
+
+    container.innerHTML =
+      '<p class="empty">سبد خرید شما خالی است 🛒</p>';
+
+    document.getElementById("cartTotal").textContent =
+      "۰ تومان";
+
+    return;
+  }
+
+  let total = 0;
+
+  container.innerHTML = cart.map(item => {
+
+    const product = products.find(p => p.id === item.id);
+
+    if (!product) return "";
+
+    const subtotal = getPrice(product) * item.quantity;
+
+    total += subtotal;
+
+    return `
+
+      <div class="cart-item">
+
+        <div>
+          <h4>${product.name}</h4>
+          <small>${formatPrice(getPrice(product))}</small>
+        </div>
+
+        <div class="quantity">
+
+          <button onclick="changeQuantity(${item.id},1)">+</button>
+
+          <span>${item.quantity.toLocaleString("fa-IR")}</span>
+
+          <button onclick="changeQuantity(${item.id},-1)">−</button>
+
+        </div>
+
+        <button class="remove-btn"
+          onclick="removeItem(${item.id})">
+          حذف
+        </button>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+  document.getElementById("cartTotal").textContent =
+    formatPrice(total);
+
+}
+
+// CHANGE QUANTITY
+
+function changeQuantity(id, amount) {
+
+  const item = cart.find(p => p.id === id);
+
+  if (!item) return;
+
+  item.quantity += amount;
+
+  if (item.quantity <= 0) {
+    cart = cart.filter(p => p.id !== id);
+  }
+
+  saveCart();
+
+}
+
+// REMOVE ITEM
+
+function removeItem(id) {
+
+  cart = cart.filter(item => item.id !== id);
+
+  saveCart();
+
+  showToast("محصول حذف شد");
+
+}
+
+// OPEN CART
+
+function openCart() {
+
+  renderCart();
+
+  document.getElementById("cartOverlay").classList.add("show");
+
+}
+
+// CLOSE CART
+
+function closeCart() {
+
+  document.getElementById("cartOverlay").classList.remove("show");
+
+}
+
+function overlayClose(event) {
+
+  if (event.target.id === "cartOverlay") {
+    closeCart();
+  }
+
+}
+
+// CHECKOUT
+
+function checkout() {
+
+  if (!cart.length) {
+
+    showToast("سبد خرید شما خالی است!");
+
+    return;
+  }
+
+  alert(
+    "سبد خرید شما آماده ثبت سفارش است.\n" +
+    "برای پرداخت واقعی باید درگاه پرداخت و بک‌اند متصل شود."
+  );
+
+}
+
+// TOAST
+
+function showToast(message) {
+
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2500);
+
+}
+
+// INITIALIZE
+
+renderProducts();
+
+updateCartCount();
+
+renderCart();
+
+</script>
+
+</body>
+</html>
